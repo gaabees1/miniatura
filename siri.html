@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(https://img.freepik.com/vetores-premium/fundo-sem-costura-de-restaurante-de-fast-food_650511-452.jpg);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+        }
+        .content {
+            display: flex;
+            margin: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            margin-right: 20px;
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            cursor: pointer;
+            margin: 0 5px;
+            width: 60px; /* Tamanho das miniaturas */
+            height: 45px; /* Tamanho das miniaturas */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .details {
+            flex-grow: 1;
+        }
+        .specifications, .reviews {
+            margin-top: 20px;
+        }
+        .add-to-cart {
+            margin-top: 20px;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+
+        a {
+            list-style-type: none;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <div class="restaurant-name">Gourmet Burguer</div>
+        </div>
+        <div class="auth-links">
+            <a href="login.html" style="color: white;">Login</a>
+            <a href="cadastro.html" style="color: white;">Cadastro</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-container">
+            <img id="imagem-principal" src="Hamburguer-de-Siri-do-Bob-Esponja-Do-Fundo-do-Mar-para-sua-Cozinha.png" alt="Hamburguer de Siri">
+            <div class="thumbnails">
+                <img class="thumbnail" data-imagem="Hamburguer-de-Siri-do-Bob-Esponja-Do-Fundo-do-Mar-para-sua-Cozinha.png" src="Hamburguer-de-Siri-do-Bob-Esponja-Do-Fundo-do-Mar-para-sua-Cozinha.png" alt="Hamburguer de Siri">
+                <img class="thumbnail" data-imagem="16-hamburguer-1024x683.jpeg" src="16-hamburguer-1024x683.jpeg" alt="Outra Imagem 1">
+                <img class="thumbnail" data-imagem="burg.jpg" src="burg.jpg" alt="burg.jpg">
+            </div>
+        </div>
+        <div class="details">
+            <h2>Hamburguer de Siri</h2>
+            <p>Delicioso hamburguer feito com ingredientes frescos e saborosos, o siri eu matei ontem.</p>
+            <div class="add-to-cart">
+                <label for="quantity">Quantidade:</label>
+                <input type="number" id="quantity" value="1" min="1" style="width: 50px;">
+                <button><a href="index.html">Adicionar ao Carrinho</a></button>
+                <h1>R$32.99</h1>
+            </div>
+            <div class="specifications">
+                <h3>Especificações:</h3>
+                <ul>
+                    <li>Carne: Siri Fresco de ontem</li>
+                    <li>Queijo: Cheddar direto da fonte</li>
+                    <li>Molhos: Ketchup e Maionese direto da fonte</li>
+                    <li>Pão: Artesanal do trigo que eu colhi do meu quintal</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h3>Avaliações:</h3>
+                <p>⭐⭐⭐⭐⭐ - "Incrível! O hamburguer de Siri é o melhor que já provei!"</p>
+                <p>⭐⭐ - "Muito saboroso, mas o tamanho poderia ser maior."</p>
+                <p>⭐⭐⭐ - "Gostei, mas achei que o pão estava um pouco seco."</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imagemPrincipal = document.getElementById('imagem-principal');
+        const miniaturas = document.querySelectorAll('.thumbnail');
+
+        miniaturas.forEach(miniatura => {
+            miniatura.addEventListener('click', function() {
+                const novaImagem = this.getAttribute('data-imagem');
+                imagemPrincipal.src = novaImagem;
+            });
+        });
+    </script>
+
+</body>
+</html>
